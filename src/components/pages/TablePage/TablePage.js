@@ -27,12 +27,15 @@ const TablePage = () => {
     
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        dispatch(editTableRequest({ id: tableId, status, peopleAmount, maxPeopleAmount, bill}))
-        navigate('/'); 
-    }
+        await dispatch(editTableRequest({ id: tableId, status, peopleAmount, maxPeopleAmount, bill }));
+        setTimeout(() => {
+            setIsSubmitting(false);
+            navigate('/');
+        }, 500);
+    };
 
     const handleStatus = (e) => {
         const newStatus = e.target.value;
