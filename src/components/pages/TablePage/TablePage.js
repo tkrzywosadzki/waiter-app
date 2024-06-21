@@ -24,7 +24,7 @@ const TablePage = () => {
     const [loading, setLoading] = useState(true);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    
+    // nie uzywac time outa tylko bazowac na fetchu
 
 
     const handleSubmit = async (e) => {
